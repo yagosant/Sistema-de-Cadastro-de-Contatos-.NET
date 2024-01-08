@@ -5,6 +5,24 @@
 
 <div class="text-center">
     <h1 class="display-4">Lista de Contatos</h1>
+
+    @if(TempData["MensagemSucesso"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["MensagemSucesso"]
+            <button type="button" class="btn-close close-alert" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    @if (TempData["MensagemErro"] != null)
+    {
+        
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            @TempData["MensagemErro"]
+            <button type="button" class="btn-close close-alert" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+    
     <p><a role="button" type="button" class="btn btn-success" asp-controller="Contato" asp-action="Criar">Criar Contato</a></p>
 
 
